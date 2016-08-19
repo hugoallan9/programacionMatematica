@@ -20,9 +20,12 @@ terminaciones = ['st', 'nd', 'rd'] + 17*['th'] + ['st', 'nd', 'rd'] +7*['th'] + 
 
 fecha = raw_input('Ingresa la fecha (MM/DD/AAAA)')
 
-mes = fecha[0:2]
-dia = fecha[3:5]
+mes = int(fecha[0:2])
+dia = int(fecha[3:5])
 year = fecha[-4:]
 
-print mes, dia, year
+mes = meses[mes - 1]
+dia = str(dia) + terminaciones[ dia -1]
+
+print mes,  dia , ',', year
 
