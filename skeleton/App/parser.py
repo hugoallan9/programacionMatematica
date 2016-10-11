@@ -7,7 +7,12 @@ Created on Wed Sep 14 09:39:40 2016
 
 from collections import namedtuple
 from pprint import pprint as pp
- 
+
+try:
+    import cPickle as pickle
+except ImportError:
+    import pickle
+
 OpInfo = namedtuple('OpInfo', 'prec assoc')
 L, R = 'Left Right'.split()
  
@@ -95,21 +100,51 @@ def shunting(tokenvals):
         outq.append(t2)
         table.append( (v, action, ' '.join(outq), ' '.join(s[0] for s in stack), note) )
         v = note = ''
-    return table
- 
-if __name__ == '__main__':
-    infix = '3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3'
-    print( 'For infix expression: %r\n' % infix )
-    rp = shunting(get_input(infix))
-    maxcolwidths = [len(max(x, key=len)) for x in zip(*rp)]
-    row = rp[0]
-    print( ' '.join('{cell:^{width}}'.format(width=width, cell=cell) for (width, cell) in zip(maxcolwidths, row)))
-    for row in rp[1:]:
-        print( ' '.join('{cell:<{width}}'.format(width=width, cell=cell) for (width, cell) in zip(maxcolwidths, row)))
- 
-    print('\n The final output RPN is: %r' % rp[-1][2])
-                            
-                                    
+    return outq 
+
+def resultado(expresion):
+    entrada = expresion
+    salida = []
+    for x in entrada:
+        if x in ops:
+            num1 = float(salida.pop())
+            num2 = float(salida.pop())
+            if x == '+':
+                salida.append( num1 + num2 )
+            elif x == '*':
+                salida.append( num1 * num2 )
+            elif x == '-':
+                salida.append( num2 - num1 )
+            elif x == '/':
+                salida.append( num2 / num1 )
+            elif x == '^':
+                salida.append( num2**num1 )
+        else:
+            salida.append( x )
+    return salida[0]
+
+
+rp = shunting(get_input('3 + 4 * 5 '))
+fichero = file('parser.dat','w')
+pickle.dump(rp, fichero, 2)
+fichero.close()
+
+
+#if __name__ == '__main__':
+#    #infix = '3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3'
+#    #print( 'For infix expression: %r\n' % infix )
+#    #rp = shunting(get_input(infix))
+#    #maxcolwidths = [len(max(x, key=len)) for x in zip(*rp)]
+#    #row = rp[0]
+#    #print( ' '.join('{cell:^{width}}'.format(width=width, cell=cell) for (width, cell) in zip(maxcolwidths, row)))
+#    #for row in rp[1:]:
+#    #    print( ' '.join('{cell:<{width}}'.format(width=width, cell=cell) for (width, cell) in zip(maxcolwidths, row)))
+# 
+#    #print('\n The final output RPN is: %r' % rp[-1][2])
+#    infix = '5 * ( 4 - 2 ) ^ 2'
+#    rp = shunting(get_input(infix))
+#    print rp
+#    print 'El resultado es:', resultado(rp)                                
             
                         
             
