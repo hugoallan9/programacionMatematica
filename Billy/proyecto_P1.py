@@ -27,6 +27,8 @@ while True:
 		else:
 			os.system("cls")
 			TorreHanoi(Numero)
+			n = 2 ** Numero - 1
+			print "El numero de movimientos fue: %d" % (n)
 			break
 	else:
 		os.system('cls')
