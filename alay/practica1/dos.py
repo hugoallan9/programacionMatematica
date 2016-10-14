@@ -1,0 +1,57 @@
+# -*- coding: utf8 -*-
+
+class Stack():
+    def __init__(self):
+        self.items = []
+
+    def isEmpty(self):
+        return self.items == []
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
+
+    def peek(self):
+        return self.items[len(self.items) - 1]
+
+guardado = Stack()
+
+archivo = open('C:\Users\MAMA TIVO\Desktop\practica\dos.txt','r')
+lista = archivo.readlines()
+print lista
+resultado=[]
+for p in lista:
+    letra=p
+    for num in range(0, len(letra)):
+        if (letra[num] == "[") or (letra[num] == "("):
+            guardado.push(letra[num])
+        elif letra[num] =="]":
+            if guardado.isEmpty()==True:
+                resultado.append("INCORRECTA")
+                break
+            if guardado.peek()=="[":
+                guardado.pop()
+            elif guardado.peek()=="(":
+                resultado.append("INCORRECTA")
+                break
+        elif letra[num] == ")":
+            if guardado.isEmpty()==True:
+                resultado.append("INCORRECTA")
+                break
+            if guardado.peek()=="(":
+                guardado.pop()
+            elif guardado.peek()=="[":
+                resultado.append("INCORRECTA")
+                break
+        if num == len(letra)-1:
+            if guardado.isEmpty()==True:
+                resultado.append("CORRECTA")
+    if guardado.isEmpty()==False:
+        while guardado.isEmpty()!=True:
+            guardado.pop()
+archivo.close()
+
+for i in range(0, len(resultado)):
+    print str(i+1)+"."+"\t"+resultado[i]
