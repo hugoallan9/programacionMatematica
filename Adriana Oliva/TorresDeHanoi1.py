@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+def hanoi(n, TorreA='A', TorreB='B', TorreC='C'):
+ 
+    if n > 0: 
+        hanoi(n-1, TorreA, TorreC, TorreB)
+        print 'Mover el disco en', TorreA, 'hacia la torre', TorreC
+        hanoi(n-1, TorreB, TorreA, TorreC) 
+ 
+discos = int(input("Ingresa el número de discos:"))
+hanoi(discos)
+print 'El número mínimo de movimientos para resolver este caso es de',2** discos - 1
