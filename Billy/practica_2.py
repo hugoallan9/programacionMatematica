@@ -69,3 +69,5 @@ for i in Lista:
 		Aux1.append(k)
 	mensaje = Parentizar(Aux1)
 	print "La palabra " + m + " " + mensaje
+	
+raw_input("Pulse cualquier tecla seguido de Enter para finalizar: ")
