@@ -29,3 +29,5 @@ if (len(NUMEROS) == 0):
 else:
 	menor = min(NUMEROS)
 	print "El menor numero ingresado es: ", menor
+	
+raw_input("Pulse cualquier tecla seguido de Enter para finalizar: ")
