@@ -146,4 +146,6 @@ if __name__ == '__main__':
 	print("El resultado es: ")
 	Resultado(rpn)
 	
+raw_input("Pulse cualquier tecla seguido de Enter para finalizar: ")
+	
 	
