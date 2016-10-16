@@ -33,3 +33,5 @@ while True:
 	else:
 		os.system('cls')
 		Numero = raw_input("Ingresa un numero de discos valido: ")
+
+raw_input("Pulse cualquier tecla seguido de Enter para finalizar: ")
