@@ -59,3 +59,5 @@ while True:
 		else:
 			os.system("cls")
 			anio = raw_input("Ingresa un numero en el rango: ")
+			
+raw_input("Pulse cualquier tecla seguido de Enter para finalizar: ")
