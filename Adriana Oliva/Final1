@@ -15,5 +15,5 @@ def Primo(n):
 				j+= m 
 		i = i + 1
 		m = 2 * i + 3
-	return [x in s if x]
+	return [x for x in s if x]
 print Primo(10001)
