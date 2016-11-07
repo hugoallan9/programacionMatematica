@@ -1,0 +1,6 @@
+lista=[]
+for x in range(10**18):
+	if x == (137*x): lista.append(x)
+	else:
+		continue
+print len(lista)
