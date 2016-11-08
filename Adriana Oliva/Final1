@@ -15,6 +15,6 @@ def Primos(n):
 				j+=m 
 		i = i + 1 
 		m = 2*i+3 
-	return[2]+[x for x in s if mcd(x,(x-1)) == 1  ]
+	return[2]+[x for x in s if x]
 print "El primo número 10001 es", Primos(200000)[10000]
 #Encuentra el primo número 10001
