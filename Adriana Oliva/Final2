@@ -19,8 +19,12 @@ def Primo(n):
 
 list =[] 
 for x in range(1000000):
-	if (n / Primo(n)):
-		list.append(x)
-	else:
-		continue
+	list.append(x / Primo(x))
+max(list)
+--------------------
+list =[] 
+i = 0
+while i <1000001:
+	list.append(i / Primo(i))
+	i = 1 + i
 max(list)
