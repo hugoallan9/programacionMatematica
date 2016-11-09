@@ -5,7 +5,7 @@ def Sumar (n):
         n = n / 10
     resultado + n
 lista=[]
-for x in range(245):
+for x in range(10**18):
 	if Sumar(x) == (137*x): lista.append(x)
 	else:
 		continue
