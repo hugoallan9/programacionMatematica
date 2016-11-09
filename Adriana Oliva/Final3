@@ -1,6 +1,12 @@
+def Sumar (n):
+    resultado = 0
+    while n > 9:
+        resultado = resultado + n % 10
+        n = n / 10
+    resultado + n
 lista=[]
-for x in range(10**18):
-	if x == (137*x): lista.append(x)
+for x in range(245):
+	if Sumar(x) == (137*x): lista.append(x)
 	else:
 		continue
-print len(lista)
+print lista
