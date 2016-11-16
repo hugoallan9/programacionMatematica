@@ -9,7 +9,7 @@ def phi(n):
             amount += 1
     return amount
 a = []
-for x in range(1,101):
+for x in range(1,1000001):
 	a.append(x / round(phi(x)))
 def fraccion(d): 
     if type(d) != float: 
