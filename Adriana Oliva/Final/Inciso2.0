@@ -1,0 +1,30 @@
+import fractions
+
+def phi(n):
+    amount = 0
+
+    for k in range(1, n + 1):
+        if fractions.gcd(n, k) == 1:
+            amount += 1
+    return amount
+a = []
+for x in range(1,101):
+	a.append(x / round(phi(x)))
+def fraccion(d): 
+    if type(d) != float: 
+        return 'Error de datos' 
+    else: 
+        a = d 
+        d1 = len(list(str(a))) 
+        d2 = len(list(str(int(a))))+1 
+        b = int(10**(d1 - d2)) 
+        a = int(a * b) 
+        for i in [2,5]: 
+            while True: 
+                if (a % i == 0 and b % i == 0): 
+                    a,b = a/i,b/i 
+                else: 
+                    break 
+        return str(int(a)) + '/' + str(int(b)) 
+
+print 'Respuesta:', fraccion(max(a))
