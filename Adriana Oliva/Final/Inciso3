@@ -1,4 +1,5 @@
-potencia = 18
+# -*- coding: utf-8 -*-
+potencia = 18 #Hugo: Sí sirve el programa y todo pero le sugiero que ponga una potencia menor a 6, porque aún no he resuelto el problema de memoria :(
 contador = 0
 
 for i in range(0, 10 ** potencia - 1):
@@ -12,7 +13,7 @@ for i in range(0, 10 ** potencia - 1):
         for j in resultado2:
             suma2 += int(j)
         if suma1 == suma2:
-            #print i, '=', suma1 #*Hugo: Puede quitarle el primer numeral para ver que números lo cumplen
+            #print i, '=', suma1 #*Puede quitarle el primer numeral para ver que números lo cumplen
             contador += 1
 
 print "Respuesta: ", contador
