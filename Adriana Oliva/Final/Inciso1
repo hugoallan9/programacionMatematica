@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 def Primos(n):
 	if n == 2: return [2]
 	elif n < 2: return []
