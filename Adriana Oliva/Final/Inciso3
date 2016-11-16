@@ -1,0 +1,18 @@
+potencia = 18
+contador = 0
+
+for i in range(0, 10 ** potencia - 1):
+    if i % 9 == 0:
+        resultado1 = list(str(i))
+        resultado2 = list(str(137 * i))
+        suma1 = 0
+        for j in resultado1:
+            suma1 += int(j)
+        suma2 = 0
+        for j in resultado2:
+            suma2 += int(j)
+        if suma1 == suma2:
+            #print i, '=', suma1 #*Hugo: Puede quitarle el primer numeral para ver que números lo cumplen
+            contador += 1
+
+print "Respuesta: ", contador
