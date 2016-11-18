@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-potencia = 18 #Hugo: Sí sirve el programa y todo pero le sugiero que ponga una potencia menor a 6, porque aún no he resuelto el problema de memoria :(
+potencia = 18 #Hugo: Sí sirve el programa y todo pero le sugiero que ponga una potencia menor a 9, porque aún no he resuelto el problema de memoria :(
 contador = 0
 
 for i in range(0, 10 ** potencia - 1):
