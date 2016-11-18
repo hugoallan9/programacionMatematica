@@ -9,9 +9,11 @@ def phi(n):
             amount += 1
     return amount
 a = []
+b = 0
 for x in xrange(46410, 1000000 ,46410):
 	if (x / round(phi(x)))>5:
-		a.append(x / round(phi(x)))
+		a.append(x and x / round(phi(x)))
+		b = b + 1
 	else:
 		continue
-print 'Respuesta:', max(a)
+print 'Respuesta:', ((a.index(max(a)))+1)*46410,'\n(n/phi(n) =',max(a),')'
