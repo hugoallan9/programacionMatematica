@@ -1,0 +1,3 @@
+# -*- coding: utf-8 -*-
+print sum(sum(map(int, str(n))) == sum(map(int, str(137 * n)))
+          for n in xrange(0, 10 ** 18, 9)) 
