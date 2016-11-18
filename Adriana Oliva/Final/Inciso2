@@ -7,12 +7,11 @@ def phi(n):
     for k in range(1, n + 1):
         if fractions.gcd(n, k) == 1:
             amount += 1
-
     return amount
 a = []
-for x in range(1,1000001):
-	if (x / round(phi(x)))>4:
-		a.append(x / round(phi(x)))
+for x in xrange(46410, 1000000 ,46410):
+	if (x / round(phi(x)))>5:
+		a.append(x and x / round(phi(x)))
 	else:
 		continue
 print 'Respuesta:', max(a)
