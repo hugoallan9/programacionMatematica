@@ -11,7 +11,7 @@ def phi(n):
 a = []
 for x in xrange(46410, 1000000 ,46410):
 	if (x / round(phi(x)))>5:
-		a.append(x and x / round(phi(x)))
+		a.append(x / round(phi(x)))
 	else:
 		continue
 print 'Respuesta:', max(a)
