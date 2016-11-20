@@ -61,6 +61,7 @@ class Tkhanoi:
 			x1, y1, x2, y2 = c.bbox(p)
 			if y2 < ay1: break
 			c.move(p,0,-1)
+			time.sleep(0.003125)
 			self.tk.update()
 		bx1, by1, bx2, by2 = c.bbox(self.pegs[b])
 		newcenter = (bx1 + bx2) // 2
@@ -68,8 +69,12 @@ class Tkhanoi:
 			x1, y1, x2, y2 = c.bbox(p)
 			center = (x1 + x2) // 2
 			if center == newcenter: break
-			if center > newcenter: c.move(p,-1,0)
-			else: c.move(p,1,0)
+			if center > newcenter: 
+				c.move(p,-1,0)
+				time.sleep(0.003125)
+			else: 
+				c.move(p,1,0)
+				time.sleep(0.003125)
 			self.tk.update()
 		pieceheight = y2 - y1
 		newbottom = by2 - pieceheight * len(self.pegstate[b]) - 2
@@ -77,6 +82,7 @@ class Tkhanoi:
 			x1, y1, x2, y2 = c.bbox(p)
 			if y2>= newbottom: break
 			c.move(p,0,1)
+			time.sleep(0.003125)
 			self.tk.update()
 		self.pegstate[b].append(i)
 		
