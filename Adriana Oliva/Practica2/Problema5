@@ -1,0 +1,10 @@
+#What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+# -*- coding: utf-8 -*-
+import fractions
+def divp():
+	a = 1
+	for x in range(1, 21):
+		a *= x // fractions.gcd(x, a)
+	return str(a)
+print divp()
