@@ -1,3 +1,4 @@
+#problema 52
 import itertools
 
 for i in itertools.count(1):
