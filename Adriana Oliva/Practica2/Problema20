@@ -1,5 +1,6 @@
-# -*- coding: utf-8 -*-
 #Find the sum of the digits in the number 100!
+
+# -*- coding: utf-8 -*-
 def factorial(n):
     if n == 0:
         return 1
