@@ -1,3 +1,4 @@
+#Problema 71
 Numerador = 0 
 Denominador = 1
 
