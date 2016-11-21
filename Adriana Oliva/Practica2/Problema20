@@ -11,5 +11,5 @@ def Sumar (n):
     while n > 9:
         resultado = resultado + n % 10
         n = n / 10
-    print resultado + n
-Sumar(factorial(100))
+    return resultado + n
+print Sumar(factorial(100))
