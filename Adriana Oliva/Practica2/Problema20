@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+#Find the sum of the digits in the number 100!
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+def Sumar (n):
+    resultado = 0
+    while n > 9:
+        resultado = resultado + n % 10
+        n = n / 10
+    print resultado + n
+Sumar(factorial(100))
