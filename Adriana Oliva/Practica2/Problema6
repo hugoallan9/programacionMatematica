@@ -1,0 +1,10 @@
+#Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+
+# -*- coding: utf-8 -*-
+def Suma(n):
+  return (n * (n + 1))/2
+  
+def SumaCuadrados(n):
+  return n*(n+1)*((2*n)+1)/6
+  
+print (Suma(100)**2) - SumaCuadrados(100)
