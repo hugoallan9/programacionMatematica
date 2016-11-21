@@ -1,3 +1,4 @@
+#problema 112
 import itertools
 
 n = 0
