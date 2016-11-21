@@ -1,0 +1,10 @@
+#What is the sum of the digits of the number 21000?
+
+# -*- coding: utf-8 -*-
+def Sumar (n):
+    resultado = 0
+    while n > 9:
+        resultado = resultado + n % 10
+        n = n / 10
+    return resultado + n
+print Sumar(2**1000)
